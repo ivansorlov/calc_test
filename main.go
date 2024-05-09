@@ -25,6 +25,8 @@ func main() {
 		fmt.Println("Error:", err)
 	}
 
+	fmt.Println("Введите операцию: ")
+
 	// отслеживаем ввод с консоли
 	for scanner.Scan() {
 		line := trim(scanner.Text())
@@ -36,6 +38,7 @@ func main() {
 		} else {
 			arith(nums, numsType)
 		}
+		fmt.Println("Введите ещё операцию: ")
 	}
 }
 
@@ -174,9 +177,9 @@ func arith(nums []string, numsType string) {
 
 	// выводим результат в консоли
 	if numsType == "roman" {
-		fmt.Println(intToRom(res))
+		fmt.Printf("Результат: \n%v\n", intToRom(res))
 	} else {
-		fmt.Println(res)
+		fmt.Printf("Результат: \n%v\n", res)
 	}
 }
 
